@@ -25,5 +25,17 @@ function onDeviceReady() {
     // Cordova is now initialized. Have fun!
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    document.getElementById('deviceready').classList.add('ready');
+    // document.getElementById('deviceready').classList.add('ready');
+
+    navigator.geolocation.watchPosition(geolocationSuccess,geolocationError);
+}
+
+function geolocationSuccess(position) {
+    $('#latitude-value').text(position.coords.latitude);
+    $('#longitude-value').text(position.coords.longitude);
+    $('#altitude-value').text(position.coords.altitude);
+}
+
+function geolocationError(error) {
+    alert(error);    
 }
