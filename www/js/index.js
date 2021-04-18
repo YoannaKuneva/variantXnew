@@ -19,7 +19,7 @@ function geolocationSuccess(position) {
 }
 
 function geolocationError(error) {
-    alert(error);    
+    alert(error);
 }
 
 function onOffline() {
